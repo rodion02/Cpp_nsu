@@ -35,30 +35,33 @@ protected:
     void TearDown() override {}
 };
 
+TEST_F(GoogleTest, Constructor)
+{
+    HashTable table4 = HashTable(table2);
+    HashTable table5 (move(table2));
+    ASSERT_EQ(table4, table5);
+}
+
 TEST_F(GoogleTest, TestCompareTables)
 {
-
     ASSERT_TRUE(table2.size() != 10);
     ASSERT_EQ(table1.size(), 8);
     ASSERT_FALSE(table1 == table2);
-
-
 }
 
 TEST_F(GoogleTest, SwapAndContains)
 {
     table1.swap(table2);
 
-    ASSERT_TRUE(table1.contains("Ender"));
-    ASSERT_TRUE(table1.contains("Anne"));
-    ASSERT_TRUE(table1.contains("Rose"));
-    ASSERT_TRUE(table1.contains("Harry"));
-    ASSERT_FALSE(table1.contains("Timmy"));
+    ASSERT_TRUE(table1.contains("Paul"));
+    ASSERT_TRUE(table1.contains("Edgar"));
+    ASSERT_TRUE(table1.contains("Emily"));
+    ASSERT_FALSE(table1.contains("James"));
+    ASSERT_FALSE(table1.contains("Lara"));
     ASSERT_FALSE(table1.contains("Lily"));
-    ASSERT_FALSE(table1.contains("Teo"));
 
-    ASSERT_TRUE(table2.contains("Timmy"));
-    ASSERT_FALSE(table2.contains("Ender"));
+    ASSERT_TRUE(table2.contains("Jhon"));
+    ASSERT_FALSE(table2.contains("Edgar"));
 
 }
 
@@ -67,10 +70,10 @@ TEST_F(GoogleTest, TestErase)
 {
     ASSERT_FALSE(table1.erase("Rose"));
 
-    ASSERT_EQ(table1.size(), 16);
-    ASSERT_TRUE(table1.erase("Timmy"));
-    ASSERT_EQ(table1.size(), 15);
-    table1.insert("Timmy", { 21, 70 });
+    ASSERT_EQ(table1.size(), 8);
+    ASSERT_TRUE(table1.erase("Tom"));
+    ASSERT_EQ(table1.size(), 7);
+    table1.insert("Tom", { 18, 65 });
 }
 
 TEST_F(GoogleTest, TestInsert)
@@ -82,19 +85,19 @@ TEST_F(GoogleTest, TestInsert)
 
 TEST_F(GoogleTest, TestAt)
 {
-    Value test = { 21, 70 };
-    ASSERT_EQ(table1.at("Timmy").age, test.age);
+    Value test = { 18, 65 };
+    ASSERT_EQ(table1.at("Tom").age, test.age);
 //    value = { 21, 70 };
 //    ASSERT_EQ(table1.at("Timmy"), value);
-//      ASSERT_THROW(table1.at("HBJMHB"), out_of_range);
+//    ASSERT_THROW(table1.at("Timmy"), "Student doesnt exist");
 //
 }
 
 TEST_F(GoogleTest, TestSize)
 {
-    ASSERT_EQ(table1.size(), 16);
+    ASSERT_EQ(table1.size(), 8);
     table1.erase("Lily");
-    ASSERT_EQ(table1.size(), 15);
+    ASSERT_EQ(table1.size(), 7);
 }
 
 
