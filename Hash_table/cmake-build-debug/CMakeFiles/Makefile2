@@ -152,8 +152,8 @@ googletest-release-1.11.0/googletest/clean: googletest-release-1.11.0/googletest
 # Target rules for target CMakeFiles/Hash_table.dir
 
 # All Build rule for target.
-CMakeFiles/Hash_table.dir/all: googletest-release-1.11.0/googletest/CMakeFiles/gtest_main.dir/all
 CMakeFiles/Hash_table.dir/all: googletest-release-1.11.0/googletest/CMakeFiles/gtest.dir/all
+CMakeFiles/Hash_table.dir/all: googletest-release-1.11.0/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hash_table.dir\build.make CMakeFiles/Hash_table.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hash_table.dir\build.make CMakeFiles/Hash_table.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\titan\C++\Hash_table\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Hash_table"
