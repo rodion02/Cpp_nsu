@@ -1,5 +1,13 @@
-//
-// Created by titan on 29.11.2021.
-//
-
 #include "writefile.h"
+
+vector<string> writefile::work(vector<string> commands, vector<string> input) {
+    ofstream output(commands.at(0));
+
+    for (const auto& line : input) {
+        output << line << '\n';
+    }
+
+    input.clear();
+
+    return input;
+}

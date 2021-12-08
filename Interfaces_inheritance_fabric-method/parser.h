@@ -21,9 +21,9 @@ typedef struct{
 
 
 class parser {
-private:
-    static map <int, block> chain;
+public:
     void parse(const string& s1);
+    static map <int, block> chain;
     static vector <int> subsequence;
 };
 

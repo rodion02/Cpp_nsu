@@ -22,12 +22,17 @@ void parser::parse(const string& s1){
     }
     else{
         getline(input, line);
+        int t = 0;
         if(line != "desc"){
+            throw runtime_error("Wrong type of file");
+        }
+        else if (input.eof()){
             throw runtime_error("Wrong type of file");
         }
         else{
             while(getline(input, line)){
                 if (line == "csed") {
+                    t += 1;
                     break;
                 }
                 stringstream ss(line); //разбиваем строку на слова
@@ -66,10 +71,14 @@ void parser::parse(const string& s1){
                 spisok.arguments = arg;
                 chain[num] = spisok;
             }
+            if (t==0){
+                throw runtime_error("Wrong type of data (csed is missing)");
+            }
 
         }
 
     }
+    int flag = 0;
     if (!getline(input, line)){
         throw runtime_error("Subsequence is missing!");
     }
@@ -91,11 +100,19 @@ void parser::parse(const string& s1){
                     }
                 }
                 subsequence[i] = num;
+                if (flag != 0){
+                    throw runtime_error("Wrong type of data");
+                }
+                flag += 1;
             }
             else{
                 if (x != "->"){
                     throw runtime_error("Wrong type of data (sign '->' is missing)");
                 }
+                if (flag != 1){
+                    throw runtime_error("Wrong type of data");
+                }
+                flag -= 1;
             }
         }
     }

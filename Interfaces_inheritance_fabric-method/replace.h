@@ -1,12 +1,13 @@
-//
-// Created by titan on 29.11.2021.
-//
-
 #ifndef INTERFACES_INHERITANCE_FABRIC_METHOD_REPLACE_H
 #define INTERFACES_INHERITANCE_FABRIC_METHOD_REPLACE_H
+#include "worker.h"
+#include <iostream>
+#include <fstream>
 
-
-class replace {
+class _replace: public worker{
+public:
+    vector<string> work(vector<string> commands, vector<string> input) override;
+private:
 
 };
 

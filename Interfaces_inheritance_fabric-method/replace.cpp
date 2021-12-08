@@ -1,5 +1,18 @@
-//
-// Created by titan on 29.11.2021.
-//
-
 #include "replace.h"
+
+vector<string> _replace::work(vector<string> commands, vector<string> input) {
+    for (auto & i : input)
+    {
+        string res(i);
+
+        size_t pos = res.find(commands.at(0));
+        while(pos != string::npos) {
+            res.replace(pos, commands.at(0).size(), commands.at(1));
+            pos = res.find(commands.at(0), pos);
+        }
+        i = res;
+    }
+
+    return input;
+}
+
