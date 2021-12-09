@@ -8,7 +8,7 @@ using namespace std;
 
 class worker {
 public:
-    virtual vector<string> work(vector<string> commands, vector<string> input){}
+    virtual vector<string> work(vector<string> &commands, vector<string> &input){ return vector<string>(); }
 };
 
 

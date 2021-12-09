@@ -5,11 +5,11 @@
 using namespace std;
 
 
-int main(int argc, char *argv[]) {
-    string file = argv[1];
+int main() {
+    string file = "config.txt";
     parser redactor;
     redactor.parse(file);
     factory dungeon_master;
-    dungeon_master.check_subsequence(parser::subsequence, parser::chain);
+    dungeon_master.check_subsequence(redactor.subsequence, redactor.chain);
     return 0;
 }

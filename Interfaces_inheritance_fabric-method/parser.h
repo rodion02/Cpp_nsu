@@ -22,7 +22,7 @@ typedef struct{
 
 class parser {
 public:
-    void parse(const string& s1);
+    static void parse(const string& s1);
     static map <int, block> chain;
     static vector <int> subsequence;
 };

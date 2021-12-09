@@ -16,7 +16,7 @@ worker* factory::check_subsequence(const vector<int>& subsequence, map<int, bloc
         else if(chain[i].command == "readfile"){
             worker* worker = new readfile();
             worker->work(input, chain[i].arguments);
-            return worker
+            return worker;
         }
         else if(chain[i].command == "replace"){
             worker* worker = new _replace();
@@ -37,4 +37,5 @@ worker* factory::check_subsequence(const vector<int>& subsequence, map<int, bloc
             throw runtime_error("Wrong name of worker!");
         }
     }
+    return nullptr;
 }
