@@ -1,6 +1,9 @@
 #include "replace.h"
 
 vector<string>& _replace::work(vector<string>& commands, vector<string>& input) {
+    if (input.empty()){
+        throw runtime_error("Wrong subsequence of commands");
+    }
     for (auto & i : input)
     {
         string res(i);

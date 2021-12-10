@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main() {
-    string file = "config.txt";
+    string file = "config2.txt";
     parser redactor;
     redactor.parse(file);
     factory dungeon_master;

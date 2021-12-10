@@ -55,7 +55,10 @@ void parser::parse(const string& s1){
                     }
                 }
                 ss >> x;
-                if (x[0] != '=' && x.length() > 1){
+                if (x == "->"){
+                    throw runtime_error("Wrong type of data (csed is missing)");
+                }
+                else if (x[0] != '=' && x.length() > 1){
                     throw runtime_error("Wrong type of data (sign '=' is missing)");
                 }
                 ss >> x;
@@ -104,7 +107,7 @@ void parser::parse(const string& s1){
                 }
                 subsequence.push_back(num);
                 if (flag != 0){
-                    throw runtime_error("Wrong type of data");
+                    throw runtime_error("Wrong type of data (sign '->' is missing)");
                 }
                 flag += 1;
             }
