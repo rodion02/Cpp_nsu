@@ -10,6 +10,8 @@ int main() {
     parser redactor;
     redactor.parse(file);
     factory dungeon_master;
-    dungeon_master.check_subsequence(redactor.subsequence, redactor.chain);
+    for(int i : redactor.subsequence) {
+        dungeon_master.check_subsequence(i, redactor.chain);
+    }
     return 0;
 }

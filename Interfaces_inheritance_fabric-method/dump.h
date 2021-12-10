@@ -6,7 +6,7 @@
 
 class dump: public worker{
 public:
-    vector<string> work(vector<string> commands, vector<string> input);
+    vector<string>& work(vector<string>& commands, vector<string>& input) override;
 private:
 
 };

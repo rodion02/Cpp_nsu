@@ -1,6 +1,6 @@
 #include "replace.h"
 
-vector<string> _replace::work(vector<string> commands, vector<string> input) {
+vector<string>& _replace::work(vector<string>& commands, vector<string>& input) {
     for (auto & i : input)
     {
         string res(i);

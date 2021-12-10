@@ -4,7 +4,7 @@
 
 #include "readfile.h"
 
-vector<string> readfile::work(vector<string> commands, vector<string> input) {
+vector<string>& readfile::work(vector<string>& commands, vector<string>& input) {
     ifstream output(commands.at(0));
     if (!output.is_open())
     {

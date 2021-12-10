@@ -1,6 +1,6 @@
 #include "writefile.h"
 
-vector<string> writefile::work(vector<string> commands, vector<string> input) {
+vector<string>& writefile::work(vector<string>& commands, vector<string>& input) {
     ofstream output(commands.at(0));
 
     for (const auto& line : input) {

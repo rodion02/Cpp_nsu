@@ -14,7 +14,7 @@
 class factory {
 public:
     vector<string> input;
-    worker* check_subsequence(const vector<int>& subsequence, map <int, block> chain);
+    worker* check_subsequence(const int subsequence, map <int, block> chain);
 private:
 };
 

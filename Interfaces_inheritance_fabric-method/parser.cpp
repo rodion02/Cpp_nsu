@@ -12,7 +12,9 @@
 
 using namespace std;
 
+parser::parser(){
 
+}
 
 void parser::parse(const string& s1){
     ifstream input(s1);
@@ -47,24 +49,24 @@ void parser::parse(const string& s1){
                         throw runtime_error("Wrong type of data (id is missing)");
                     }
                     else{
-                        num += pow(10, n) * i;
+                        int deg = pow(10, n);
+                        num += deg * i - 48 * deg;
                         n--;
                     }
                 }
                 ss >> x;
-                if (x[0] != '=' and x.length() > 1){
+                if (x[0] != '=' && x.length() > 1){
                     throw runtime_error("Wrong type of data (sign '=' is missing)");
                 }
                 ss >> x;
-                if (x != "dump" or x != "grep" or x != "readfile" or x != "replace" or x != "sort" or x != "writefile"){
+                if (x != "dump" && x != "grep" && x != "readfile" && x != "replace" && x != "sort" && x != "writefile"){
                     throw runtime_error("Wrong type of data (name of method is missing)");
                 }
                 else{
                     com = x;
                 }
-                int k = 0;
                 while(ss >> x){
-                    arg[k] = x;
+                    arg.push_back(x);
                 }
                 block spisok;
                 spisok.command = com;
@@ -95,11 +97,12 @@ void parser::parse(const string& s1){
                         throw runtime_error("Wrong type of data (incorrect format of number)");
                     }
                     else{
-                        num += pow(10, n) * i;
+                        int deg = pow(10, n);
+                        num += deg * i - 48 * deg;
                         n--;
                     }
                 }
-                subsequence[i] = num;
+                subsequence.push_back(num);
                 if (flag != 0){
                     throw runtime_error("Wrong type of data");
                 }

@@ -22,9 +22,10 @@ typedef struct{
 
 class parser {
 public:
-    static void parse(const string& s1);
-    static map <int, block> chain;
-    static vector <int> subsequence;
+    parser();
+    void parse(const string& s1);
+    map <int, block> chain;
+    vector <int> subsequence;
 };
 
 
